@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const LOGO_URL = "https://cdn.poehali.dev/projects/f3243e53-ce43-493c-bd8c-0a515bcbbbe1/bucket/23bcb886-0878-49b7-829e-1600944a91e8.jpg";
+
 export default function Index() {
   const [formData, setFormData] = useState({
     name: "",
@@ -8,6 +10,7 @@ export default function Index() {
     genre: "",
     vision: "",
     budget: "",
+    bandlink: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,17 +24,18 @@ export default function Index() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black">
         <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold tracking-tighter">
-            YALT
+          <a href="/" className="flex items-center gap-3">
+            <img src={LOGO_URL} alt="YALT REC" className="w-10 h-10 object-cover" />
+            <span className="text-xl font-bold tracking-tighter">YALT REC</span>
           </a>
           <div className="flex space-x-8">
-            <a href="#work" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#work" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
               Наши работы
             </a>
-            <a href="#about" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#about" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
               О нас
             </a>
-            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
+            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
               Анкета
             </a>
           </div>
@@ -45,7 +49,7 @@ export default function Index() {
             <h1 className="text-8xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
               YALT
               <br />
-              <span className="text-red-600">MUSIC</span>
+              <span className="text-orange-500">REC</span>
             </h1>
             <p className="text-xl max-w-xl">
               Продюссирование синглов и альбомов. Мы превращаем вашу музыку в звучание, которое остаётся.
@@ -53,23 +57,25 @@ export default function Index() {
             <div className="flex gap-4 mt-8">
               <a
                 href="#contact"
-                className="bg-black text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-red-600 transition-colors"
+                className="bg-black text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-orange-500 transition-colors"
               >
                 Оставить заявку
               </a>
               <a
                 href="#work"
-                className="border border-black px-8 py-3 text-sm uppercase tracking-widest hover:border-red-600 hover:text-red-600 transition-colors"
+                className="border border-black px-8 py-3 text-sm uppercase tracking-widest hover:border-orange-500 hover:text-orange-500 transition-colors"
               >
                 Наши работы
               </a>
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
-            <div className="relative w-full aspect-square bg-red-600">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white text-[120px] font-bold tracking-tighter leading-none select-none">Y</span>
-              </div>
+            <div className="relative w-full aspect-square">
+              <img
+                src={LOGO_URL}
+                alt="YALT REC"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-black"></div>
             </div>
           </div>
@@ -83,10 +89,9 @@ export default function Index() {
           <p className="text-neutral-400 mb-12 max-w-xl">Послушайте, что мы создали — и решите, совпадает ли наш звук с вашим.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Release 1 */}
             <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+              <div className="aspect-square mb-4 overflow-hidden">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">01</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
@@ -96,10 +101,9 @@ export default function Index() {
               <p className="text-neutral-500 text-sm mt-1">Продакшн, сведение, мастеринг</p>
             </div>
 
-            {/* Release 2 */}
             <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+              <div className="aspect-square mb-4 overflow-hidden">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">02</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Альбом</span>
                 </div>
@@ -109,10 +113,9 @@ export default function Index() {
               <p className="text-neutral-500 text-sm mt-1">Полное продюссирование</p>
             </div>
 
-            {/* Release 3 */}
             <div className="group">
-              <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+              <div className="aspect-square mb-4 overflow-hidden">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">03</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
@@ -131,16 +134,16 @@ export default function Index() {
           <div className="grid grid-cols-12 gap-8">
             <div className="col-span-12 md:col-span-5">
               <h2 className="text-6xl font-bold tracking-tighter mb-8">О НАС</h2>
-              <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-black"></div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <p className="text-4xl font-bold tracking-tighter">YALT</p>
+              <div className="aspect-[4/5] relative mb-8 md:mb-0 overflow-hidden">
+                <img src={LOGO_URL} alt="YALT REC" className="w-full h-full object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-6 py-4">
+                  <p className="text-white text-3xl font-bold tracking-tighter">YALT REC</p>
                 </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 md:pt-24">
               <p className="text-xl mb-6">
-                YALT — продюсерский лейбл, который работает с артистами, готовыми к серьёзному звуку. Мы не просто записываем — мы выстраиваем музыкальный образ от первой ноты до релиза.
+                YALT REC — продюсерский лейбл, который работает с артистами, готовыми к серьёзному звуку. Мы не просто записываем — мы выстраиваем музыкальный образ от первой ноты до релиза.
               </p>
               <p className="mb-6">
                 Каждый проект — это отдельная история. Мы погружаемся в ваш материал, понимаем вашу аудиторию и создаём продакшн, который работает на стримингах, радио и живых выступлениях.
@@ -174,7 +177,7 @@ export default function Index() {
       </section>
 
       {/* Contact / Questionnaire Section */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-red-600 text-white">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-orange-500 text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -182,7 +185,7 @@ export default function Index() {
               <p className="text-xl mb-8">
                 Расскажите о своём проекте — и наш менеджер свяжется с вами в течение 24 часов.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <span className="text-4xl font-bold leading-none">01</span>
                   <p>Заполните анкету — это займёт 2 минуты</p>
@@ -283,18 +286,32 @@ export default function Index() {
                       id="budget"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-red-600 border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black text-white"
+                      className="w-full bg-orange-500 border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black text-white"
                     >
-                      <option value="" className="bg-red-600">Выберите диапазон</option>
-                      <option value="up-30" className="bg-red-600">До 30 000 ₽</option>
-                      <option value="30-100" className="bg-red-600">30 000 — 100 000 ₽</option>
-                      <option value="100-300" className="bg-red-600">100 000 — 300 000 ₽</option>
-                      <option value="300plus" className="bg-red-600">От 300 000 ₽</option>
+                      <option value="" className="bg-orange-600">Выберите диапазон</option>
+                      <option value="up-30" className="bg-orange-600">До 30 000 ₽</option>
+                      <option value="30-100" className="bg-orange-600">30 000 — 100 000 ₽</option>
+                      <option value="100-300" className="bg-orange-600">100 000 — 300 000 ₽</option>
+                      <option value="300plus" className="bg-orange-600">От 300 000 ₽</option>
                     </select>
+                  </div>
+                  <div>
+                    <label htmlFor="bandlink" className="block text-sm uppercase tracking-widest mb-2">
+                      Ссылка на Bandlink
+                      <span className="ml-2 normal-case tracking-normal font-normal text-white/60">— по желанию</span>
+                    </label>
+                    <input
+                      type="url"
+                      id="bandlink"
+                      value={formData.bandlink}
+                      onChange={(e) => setFormData({ ...formData, bandlink: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                      placeholder="https://band.link/..."
+                    />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-white text-black py-4 text-sm uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-colors mt-4"
+                    className="w-full bg-black text-white py-4 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-black transition-colors mt-4"
                   >
                     Отправить анкету
                   </button>
@@ -308,9 +325,12 @@ export default function Index() {
       {/* Footer */}
       <footer className="py-8 px-4 md:px-8 border-t border-black">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="font-bold tracking-tighter">YALT</span>
+          <div className="flex items-center gap-3">
+            <img src={LOGO_URL} alt="YALT REC" className="w-8 h-8 object-cover" />
+            <span className="font-bold tracking-tighter">YALT REC</span>
+          </div>
           <span className="text-sm text-neutral-500 uppercase tracking-widest">Продюссирование синглов и альбомов</span>
-          <span className="text-sm text-neutral-400">© 2024 YALT. Все права защищены.</span>
+          <span className="text-sm text-neutral-400">© 2024 YALT REC. Все права защищены.</span>
         </div>
       </footer>
     </main>
