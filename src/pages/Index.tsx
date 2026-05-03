@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Icon from "@/components/ui/icon";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/f3243e53-ce43-493c-bd8c-0a515bcbbbe1/bucket/23bcb886-0878-49b7-829e-1600944a91e8.jpg";
 const SEND_ANKETA_URL = "https://functions.poehali.dev/ee066273-f0e7-47d5-bdd9-2ea3f2abf934";
@@ -16,6 +17,7 @@ export default function Index() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ export default function Index() {
             <img src={LOGO_URL} alt="YALT REC" className="w-10 h-10 object-cover" />
             <span className="text-xl font-bold tracking-tighter">YALT REC</span>
           </a>
-          <div className="flex space-x-8">
+          <div className="hidden md:flex space-x-8">
             <a href="#work" className="text-sm uppercase tracking-widest hover:text-amber-800 transition-colors">
               Наши работы
             </a>
@@ -56,7 +58,27 @@ export default function Index() {
               Анкета
             </a>
           </div>
+          <button
+            className="md:hidden p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Меню"
+          >
+            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
+          </button>
         </div>
+        {menuOpen && (
+          <div className="md:hidden bg-white border-t border-black">
+            <a href="#work" onClick={() => setMenuOpen(false)} className="block px-6 py-4 text-sm uppercase tracking-widest border-b border-neutral-100 hover:text-amber-800 transition-colors">
+              Наши работы
+            </a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="block px-6 py-4 text-sm uppercase tracking-widest border-b border-neutral-100 hover:text-amber-800 transition-colors">
+              О нас
+            </a>
+            <a href="#contact" onClick={() => setMenuOpen(false)} className="block px-6 py-4 text-sm uppercase tracking-widest hover:text-amber-800 transition-colors">
+              Анкета
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
