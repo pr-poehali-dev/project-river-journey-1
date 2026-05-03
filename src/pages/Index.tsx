@@ -1,21 +1,38 @@
+import { useState } from "react";
+
 export default function Index() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    genre: "",
+    vision: "",
+    budget: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <main className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black">
         <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
           <a href="/" className="text-xl font-bold tracking-tighter">
-            GRIDFORM
+            YALT
           </a>
           <div className="flex space-x-8">
             <a href="#work" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Работы
+              Наши работы
             </a>
             <a href="#about" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
               О нас
             </a>
             <a href="#contact" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Контакты
+              Анкета
             </a>
           </div>
         </div>
@@ -26,16 +43,33 @@ export default function Index() {
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12 md:col-span-7 mb-8 md:mb-0">
             <h1 className="text-8xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
-              GRID
+              YALT
               <br />
-              FORM
+              <span className="text-red-600">MUSIC</span>
             </h1>
             <p className="text-xl max-w-xl">
-              Ясность. Точность. Структура. Мы превращаем сложные идеи в чистый, функциональный дизайн, который говорит сам за себя.
+              Продюссирование синглов и альбомов. Мы превращаем вашу музыку в звучание, которое остаётся.
             </p>
+            <div className="flex gap-4 mt-8">
+              <a
+                href="#contact"
+                className="bg-black text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-red-600 transition-colors"
+              >
+                Оставить заявку
+              </a>
+              <a
+                href="#work"
+                className="border border-black px-8 py-3 text-sm uppercase tracking-widest hover:border-red-600 hover:text-red-600 transition-colors"
+              >
+                Наши работы
+              </a>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-5 flex items-center justify-center">
             <div className="relative w-full aspect-square bg-red-600">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-white text-[120px] font-bold tracking-tighter leading-none select-none">Y</span>
+              </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-black"></div>
             </div>
           </div>
@@ -45,40 +79,47 @@ export default function Index() {
       {/* Work Section */}
       <section id="work" className="py-20 px-4 md:px-8 bg-black text-white">
         <div className="container mx-auto">
-          <h2 className="text-6xl font-bold tracking-tighter mb-12">РАБОТЫ</h2>
+          <h2 className="text-6xl font-bold tracking-tighter mb-4">НАШИ РАБОТЫ</h2>
+          <p className="text-neutral-400 mb-12 max-w-xl">Послушайте, что мы создали — и решите, совпадает ли наш звук с вашим.</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project 1 */}
+            {/* Release 1 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">01</span>
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+                  <span className="text-white text-6xl font-bold mb-2">01</span>
+                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">TechFlow Solutions</h3>
-              <p className="text-neutral-400">Полный брендинг и типографическая система для финтех-стартапа</p>
+              <h3 className="text-xl font-bold mb-1">Проект № 1</h3>
+              <p className="text-neutral-400 text-sm">Поп-сингл / 2024</p>
+              <p className="text-neutral-500 text-sm mt-1">Продакшн, сведение, мастеринг</p>
             </div>
 
-            {/* Project 2 */}
+            {/* Release 2 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">02</span>
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+                  <span className="text-white text-6xl font-bold mb-2">02</span>
+                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Альбом</span>
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Alpine Ventures</h3>
-              <p className="text-neutral-400">Минималистичная визуальная коммуникация для инвестиционного фонда</p>
+              <h3 className="text-xl font-bold mb-1">Проект № 2</h3>
+              <p className="text-neutral-400 text-sm">R&B альбом / 2024</p>
+              <p className="text-neutral-500 text-sm mt-1">Полное продюссирование</p>
             </div>
 
-            {/* Project 3 */}
+            {/* Release 3 */}
             <div className="group">
               <div className="aspect-square bg-white mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center bg-neutral-100 group-hover:bg-red-600 transition-colors duration-300">
-                  <span className="text-black text-8xl font-bold">03</span>
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-red-600 transition-colors duration-300 border border-neutral-700">
+                  <span className="text-white text-6xl font-bold mb-2">03</span>
+                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Nova Industries</h3>
-              <p className="text-neutral-400">Модульная дизайн-система для производственной компании</p>
+              <h3 className="text-xl font-bold mb-1">Проект № 3</h3>
+              <p className="text-neutral-400 text-sm">Хип-хоп сингл / 2023</p>
+              <p className="text-neutral-500 text-sm mt-1">Продакшн, сведение</p>
             </div>
           </div>
         </div>
@@ -92,35 +133,38 @@ export default function Index() {
               <h2 className="text-6xl font-bold tracking-tighter mb-8">О НАС</h2>
               <div className="aspect-[4/5] bg-neutral-100 relative mb-8 md:mb-0">
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-black"></div>
+                <div className="absolute bottom-8 left-8 right-8">
+                  <p className="text-4xl font-bold tracking-tighter">YALT</p>
+                </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-7 md:pt-24">
               <p className="text-xl mb-6">
-                GRIDFORM - дизайн-студия, преданная принципам ясности, точности и осмысленной коммуникации. Мы верим, что великий дизайн незаметен - он просто работает.
+                YALT — продюсерский лейбл, который работает с артистами, готовыми к серьёзному звуку. Мы не просто записываем — мы выстраиваем музыкальный образ от первой ноты до релиза.
               </p>
               <p className="mb-6">
-                Наш подход основан на системном мышлении и типографическом мастерстве. Мы используем модульные сетки, чистую гротескную типографику, асимметричные композиции и предметную фотографию для создания дизайна, который говорит ясно и убедительно.
+                Каждый проект — это отдельная история. Мы погружаемся в ваш материал, понимаем вашу аудиторию и создаём продакшн, который работает на стримингах, радио и живых выступлениях.
               </p>
               <p className="mb-6">
-                Основанная дизайнерами, убежденными, что форма следует за функцией, мы сотрудничаем с прогрессивными брендами, создавая визуальные языки, которые проверены временем.
+                Сингл или полноформатный альбом — мы доводим каждый трек до коммерческого качества без потери авторского голоса.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-12">
                 <div>
                   <h3 className="text-sm uppercase tracking-widest mb-2">Принципы</h3>
                   <ul className="space-y-2">
-                    <li>Минимализм</li>
-                    <li>Модульные сетки</li>
-                    <li>Гротескная типографика</li>
-                    <li>Предметная фотография</li>
+                    <li>Авторский звук</li>
+                    <li>Коммерческое качество</li>
+                    <li>Сроки без компромиссов</li>
+                    <li>Прозрачная работа</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-sm uppercase tracking-widest mb-2">Услуги</h3>
                   <ul className="space-y-2">
-                    <li>Брендинг</li>
-                    <li>Визуальные системы</li>
-                    <li>Типографика</li>
-                    <li>Цифровой дизайн</li>
+                    <li>Продюссирование синглов</li>
+                    <li>Продюссирование альбомов</li>
+                    <li>Сведение и мастеринг</li>
+                    <li>Релиз-стратегия</li>
                   </ul>
                 </div>
               </div>
@@ -129,96 +173,146 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact / Questionnaire Section */}
       <section id="contact" className="py-20 px-4 md:px-8 bg-red-600 text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-6xl font-bold tracking-tighter mb-8">КОНТАКТЫ</h2>
-              <p className="text-xl mb-8">Заинтересованы в сотрудничестве? Давайте обсудим ваш проект.</p>
+              <h2 className="text-6xl font-bold tracking-tighter mb-8">АНКЕТА</h2>
+              <p className="text-xl mb-8">
+                Расскажите о своём проекте — и наш менеджер свяжется с вами в течение 24 часов.
+              </p>
               <div className="space-y-4">
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Почта</span>
-                  <a href="mailto:hello@gridform.ru" className="hover:underline">
-                    hello@gridform.ru
-                  </a>
-                </p>
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Телефон</span>
-                  <a href="tel:+74951234567" className="hover:underline">
-                    +7 (495) 123-45-67
-                  </a>
-                </p>
-                <p className="flex items-center">
-                  <span className="w-24 text-sm uppercase tracking-widest">Адрес</span>
-                  <span>Москва, Россия</span>
-                </p>
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl font-bold leading-none">01</span>
+                  <p>Заполните анкету — это займёт 2 минуты</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl font-bold leading-none">02</span>
+                  <p>Менеджер изучит заявку и свяжется с вами</p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-4xl font-bold leading-none">03</span>
+                  <p>Обсудим ваш проект и начнём работу</p>
+                </div>
               </div>
             </div>
             <div>
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm uppercase tracking-widest mb-2">
-                    Имя
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
-                    placeholder="Ваше имя"
-                  />
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center h-full py-16 text-center">
+                  <div className="text-6xl font-bold mb-4">✓</div>
+                  <h3 className="text-2xl font-bold tracking-tighter mb-4">Анкета отправлена!</h3>
+                  <p className="text-white/80">Наш менеджер свяжется с вами в течение 24 часов.</p>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm uppercase tracking-widest mb-2">
-                    Почта
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
-                    placeholder="Ваш email"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm uppercase tracking-widest mb-2">
-                    Сообщение
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
-                    placeholder="Ваше сообщение"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="mt-8 px-8 py-3 bg-black text-white text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
-                >
-                  Отправить
-                </button>
-              </form>
+              ) : (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div>
+                    <label htmlFor="name" className="block text-sm uppercase tracking-widest mb-2">
+                      Имя артиста / группа
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                      placeholder="Ваше имя или псевдоним"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm uppercase tracking-widest mb-2">
+                      Почта
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm uppercase tracking-widest mb-2">
+                      Телефон
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                      placeholder="+7 (___) ___-__-__"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="genre" className="block text-sm uppercase tracking-widest mb-2">
+                      Жанр / стиль
+                    </label>
+                    <input
+                      type="text"
+                      id="genre"
+                      required
+                      value={formData.genre}
+                      onChange={(e) => setFormData({ ...formData, genre: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50"
+                      placeholder="Поп, хип-хоп, R&B..."
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="vision" className="block text-sm uppercase tracking-widest mb-2">
+                      Расскажите о проекте
+                    </label>
+                    <textarea
+                      id="vision"
+                      rows={3}
+                      required
+                      value={formData.vision}
+                      onChange={(e) => setFormData({ ...formData, vision: e.target.value })}
+                      className="w-full bg-transparent border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black placeholder-white/50 resize-none"
+                      placeholder="Сингл или альбом? Что хотите передать слушателю?"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="budget" className="block text-sm uppercase tracking-widest mb-2">
+                      Бюджет
+                    </label>
+                    <select
+                      id="budget"
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                      className="w-full bg-red-600 border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black text-white"
+                    >
+                      <option value="" className="bg-red-600">Выберите диапазон</option>
+                      <option value="up-30" className="bg-red-600">До 30 000 ₽</option>
+                      <option value="30-100" className="bg-red-600">30 000 — 100 000 ₽</option>
+                      <option value="100-300" className="bg-red-600">100 000 — 300 000 ₽</option>
+                      <option value="300plus" className="bg-red-600">От 300 000 ₽</option>
+                    </select>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-white text-black py-4 text-sm uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-colors mt-4"
+                  >
+                    Отправить анкету
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 md:px-8 bg-black text-white">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm mb-4 md:mb-0">2025 GRIDFORM Studio. Все права защищены.</p>
-          <div className="flex space-x-8">
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Instagram
-            </a>
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Behance
-            </a>
-            <a href="#" className="text-sm uppercase tracking-widest hover:text-red-600 transition-colors">
-              Telegram
-            </a>
-          </div>
+      <footer className="py-8 px-4 md:px-8 border-t border-black">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <span className="font-bold tracking-tighter">YALT</span>
+          <span className="text-sm text-neutral-500 uppercase tracking-widest">Продюссирование синглов и альбомов</span>
+          <span className="text-sm text-neutral-400">© 2024 YALT. Все права защищены.</span>
         </div>
       </footer>
     </main>
-  )
+  );
 }
