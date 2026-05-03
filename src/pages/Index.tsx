@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const LOGO_URL = "https://cdn.poehali.dev/projects/f3243e53-ce43-493c-bd8c-0a515bcbbbe1/bucket/23bcb886-0878-49b7-829e-1600944a91e8.jpg";
+const SEND_ANKETA_URL = "https://functions.poehali.dev/ee066273-f0e7-47d5-bdd9-2ea3f2abf934";
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -13,10 +14,26 @@ export default function Index() {
     bandlink: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(SEND_ANKETA_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Ошибка отправки");
+      setSubmitted(true);
+    } catch {
+      setError("Не удалось отправить анкету. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -309,11 +326,15 @@ export default function Index() {
                       placeholder="https://band.link/..."
                     />
                   </div>
+                  {error && (
+                    <p className="text-white bg-black/30 px-4 py-2 text-sm">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-black text-white py-4 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-black transition-colors mt-4"
+                    disabled={loading}
+                    className="w-full bg-black text-white py-4 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-black transition-colors mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Отправить анкету
+                    {loading ? "Отправляем..." : "Отправить анкету"}
                   </button>
                 </form>
               )}
