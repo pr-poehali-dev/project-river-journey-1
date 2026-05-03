@@ -105,42 +105,8 @@ export default function Index() {
           <h2 className="text-6xl font-bold tracking-tighter mb-4">НАШИ РАБОТЫ</h2>
           <p className="text-neutral-400 mb-12 max-w-xl">Послушайте, что мы создали — и решите, совпадает ли наш звук с вашим.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group">
-              <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
-                  <span className="text-white text-6xl font-bold mb-2">01</span>
-                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-1">Проект № 1</h3>
-              <p className="text-neutral-400 text-sm">Поп-сингл / 2024</p>
-              <p className="text-neutral-500 text-sm mt-1">Продакшн, сведение, мастеринг</p>
-            </div>
-
-            <div className="group">
-              <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
-                  <span className="text-white text-6xl font-bold mb-2">02</span>
-                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Альбом</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-1">Проект № 2</h3>
-              <p className="text-neutral-400 text-sm">R&B альбом / 2024</p>
-              <p className="text-neutral-500 text-sm mt-1">Полное продюссирование</p>
-            </div>
-
-            <div className="group">
-              <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
-                  <span className="text-white text-6xl font-bold mb-2">03</span>
-                  <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
-                </div>
-              </div>
-              <h3 className="text-xl font-bold mb-1">Проект № 3</h3>
-              <p className="text-neutral-400 text-sm">Хип-хоп сингл / 2023</p>
-              <p className="text-neutral-500 text-sm mt-1">Продакшн, сведение</p>
-            </div>
+          <div className="flex items-center justify-center py-16 border border-neutral-700">
+            <p className="text-neutral-500 uppercase tracking-widest text-sm">Работы скоро появятся</p>
           </div>
         </div>
       </section>
