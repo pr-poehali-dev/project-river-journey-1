@@ -69,7 +69,7 @@ export default function Index() {
               <span className="text-amber-800">REC</span>
             </h1>
             <p className="text-xl max-w-xl">
-              Продюссирование синглов и альбомов. Мы превращаем вашу музыку в звучание, которое остаётся.
+              От идеи до релиза — быстро, чётко, хорошо.
             </p>
             <div className="flex gap-4 mt-8">
               <a
