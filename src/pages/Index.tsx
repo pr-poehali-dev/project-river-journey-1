@@ -29,13 +29,13 @@ export default function Index() {
             <span className="text-xl font-bold tracking-tighter">YALT REC</span>
           </a>
           <div className="flex space-x-8">
-            <a href="#work" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
+            <a href="#work" className="text-sm uppercase tracking-widest hover:text-amber-800 transition-colors">
               Наши работы
             </a>
-            <a href="#about" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
+            <a href="#about" className="text-sm uppercase tracking-widest hover:text-amber-800 transition-colors">
               О нас
             </a>
-            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-orange-500 transition-colors">
+            <a href="#contact" className="text-sm uppercase tracking-widest hover:text-amber-800 transition-colors">
               Анкета
             </a>
           </div>
@@ -49,7 +49,7 @@ export default function Index() {
             <h1 className="text-8xl md:text-9xl font-bold tracking-tighter leading-none mb-6">
               YALT
               <br />
-              <span className="text-orange-500">REC</span>
+              <span className="text-amber-800">REC</span>
             </h1>
             <p className="text-xl max-w-xl">
               Продюссирование синглов и альбомов. Мы превращаем вашу музыку в звучание, которое остаётся.
@@ -57,13 +57,13 @@ export default function Index() {
             <div className="flex gap-4 mt-8">
               <a
                 href="#contact"
-                className="bg-black text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-orange-500 transition-colors"
+                className="bg-black text-white px-8 py-3 text-sm uppercase tracking-widest hover:bg-amber-800 transition-colors"
               >
                 Оставить заявку
               </a>
               <a
                 href="#work"
-                className="border border-black px-8 py-3 text-sm uppercase tracking-widest hover:border-orange-500 hover:text-orange-500 transition-colors"
+                className="border border-black px-8 py-3 text-sm uppercase tracking-widest hover:border-amber-800 hover:text-amber-800 transition-colors"
               >
                 Наши работы
               </a>
@@ -91,7 +91,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="group">
               <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">01</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
@@ -103,7 +103,7 @@ export default function Index() {
 
             <div className="group">
               <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">02</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Альбом</span>
                 </div>
@@ -115,7 +115,7 @@ export default function Index() {
 
             <div className="group">
               <div className="aspect-square mb-4 overflow-hidden">
-                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-orange-500 transition-colors duration-300 border border-neutral-700">
+                <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 group-hover:bg-amber-800 transition-colors duration-300 border border-neutral-700">
                   <span className="text-white text-6xl font-bold mb-2">03</span>
                   <span className="text-neutral-400 text-xs uppercase tracking-widest group-hover:text-white transition-colors">Сингл</span>
                 </div>
@@ -177,7 +177,7 @@ export default function Index() {
       </section>
 
       {/* Contact / Questionnaire Section */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-orange-500 text-white">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-amber-800 text-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -286,13 +286,13 @@ export default function Index() {
                       id="budget"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-orange-500 border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black text-white"
+                      className="w-full bg-amber-800 border-b-2 border-white py-2 px-0 focus:outline-none focus:border-black text-white"
                     >
-                      <option value="" className="bg-orange-600">Выберите диапазон</option>
-                      <option value="up-30" className="bg-orange-600">До 30 000 ₽</option>
-                      <option value="30-100" className="bg-orange-600">30 000 — 100 000 ₽</option>
-                      <option value="100-300" className="bg-orange-600">100 000 — 300 000 ₽</option>
-                      <option value="300plus" className="bg-orange-600">От 300 000 ₽</option>
+                      <option value="" className="bg-amber-900">Выберите диапазон</option>
+                      <option value="up-30" className="bg-amber-900">До 30 000 ₽</option>
+                      <option value="30-100" className="bg-amber-900">30 000 — 100 000 ₽</option>
+                      <option value="100-300" className="bg-amber-900">100 000 — 300 000 ₽</option>
+                      <option value="300plus" className="bg-amber-900">От 300 000 ₽</option>
                     </select>
                   </div>
                   <div>
